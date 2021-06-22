@@ -32,14 +32,12 @@ export async function fetchFileToLocal({
     auth: token
   })
 
-  const {data} = <{data: GetContentDataType}>(
-    await octokit.rest.repos.getContent({
-      owner,
-      repo,
-      path: path.join(srcPath, srcFilename),
-      ref
-    })
-  )
+  const {data} = (await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path: path.join(srcPath, srcFilename),
+    ref
+  })) as {data: GetContentDataType}
 
   const dataBuffer = Buffer.from(data.content, 'base64')
 
