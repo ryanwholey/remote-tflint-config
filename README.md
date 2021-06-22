@@ -45,5 +45,5 @@ The following outputs can be used by subsequent workflow steps.
 ## Releasing
 
 ```sh
-npm run (major|minor|patch) && git push --follow-tags
+npm version (major|minor|patch) && git push --follow-tags
 ```
