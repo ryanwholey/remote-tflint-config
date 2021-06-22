@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import {fetchFileToLocal} from './fetchFileToLocal'
 
 async function run(): Promise<void> {
-  const [owner, repo] = (core.getInput('source-repo') as string).split('/')
+  const [owner, repo] = core.getInput('source-repo').split('/')
 
   try {
     core.setOutput(
