@@ -40,17 +40,18 @@ exports.fetchFileToLocal = void 0;
 const path = __importStar(__webpack_require__(622));
 const fs = __importStar(__webpack_require__(747));
 const rest_1 = __webpack_require__(375);
+const core = __importStar(__webpack_require__(186));
 function fetchFileToLocal({ owner, repo, srcPath, srcFilename, ref, dstPath, dstFilename, token }) {
     return __awaiter(this, void 0, void 0, function* () {
         const octokit = new rest_1.Octokit({
             auth: token
         });
-        console.log({
+        core.debug(JSON.stringify({
             owner,
             repo,
             path: path.join(srcPath, srcFilename),
             ref
-        });
+        }));
         const { data } = (yield octokit.rest.repos.getContent({
             owner,
             repo,
