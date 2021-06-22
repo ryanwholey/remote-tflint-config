@@ -108,7 +108,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             core.setOutput('config-path', yield fetchFileToLocal_1.fetchFileToLocal({
-                owner: core.getInput('soure-owner'),
+                owner: core.getInput('source-owner'),
                 repo: core.getInput('source-repo'),
                 srcPath: core.getInput('source-path'),
                 srcFilename: core.getInput('source-filename'),
