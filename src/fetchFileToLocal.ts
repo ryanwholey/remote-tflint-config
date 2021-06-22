@@ -32,6 +32,13 @@ export async function fetchFileToLocal({
     auth: token
   })
 
+  console.log({
+    owner,
+    repo,
+    path: path.join(srcPath, srcFilename),
+    ref
+  })
+
   const {data} = (await octokit.rest.repos.getContent({
     owner,
     repo,
