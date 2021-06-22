@@ -2,6 +2,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 
 import {Octokit} from '@octokit/rest'
+import * as core from '@actions/core'
 
 type GetContentDataType = {
   content: string
@@ -32,12 +33,14 @@ export async function fetchFileToLocal({
     auth: token
   })
 
-  console.log({
-    owner,
-    repo,
-    path: path.join(srcPath, srcFilename),
-    ref
-  })
+  core.debug(
+    JSON.stringify({
+      owner,
+      repo,
+      path: path.join(srcPath, srcFilename),
+      ref
+    })
+  )
 
   const {data} = (await octokit.rest.repos.getContent({
     owner,
