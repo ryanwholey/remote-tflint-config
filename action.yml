@@ -5,9 +5,6 @@ inputs:
   source-repo: 
     required: true
     description: The repository to copy a tflint configuration from
-  source-owner:
-    required: true
-    description: The repository owner
   source-path:
     description: The directory in the remote repo where the configuration exists
     default: .

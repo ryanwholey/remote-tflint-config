@@ -11,8 +11,7 @@ Fetch a tflint configuration file from a remote repository and save it locally t
       - uses: actions/checkout@v2
       - uses: ryanwholey/remote-tflint-config@v1
         with:
-          source-repo: public-tflint-config
-          source-owner: ryanwholey
+          source-repo: ryanwholey/public-tflint-config
       - uses: terraform-linters/setup-tflint@v1
         name: Setup TFLint
         with:
@@ -24,7 +23,7 @@ Fetch a tflint configuration file from a remote repository and save it locally t
 
 | Name | Description | Default |
 | --- | --- | --- |
-| `source-repo` | The repository to copy a tflint configuration from ||
+| `source-repo` | (Required) The repository to copy a tflint configuration from. Format: `owner/name` ||
 | `source-owner` | The repository owner ||
 | `source-path` | The directory in the remote repo where the configuration exists | `.` |
 | `source-filename` | The source filename | `.tflint.hcl` |
