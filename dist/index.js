@@ -107,10 +107,11 @@ const core = __importStar(__webpack_require__(186));
 const fetchFileToLocal_1 = __webpack_require__(859);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        const [owner, repo] = core.getInput('source-repo').split('/');
         try {
             core.setOutput('config-path', yield fetchFileToLocal_1.fetchFileToLocal({
-                owner: core.getInput('source-owner'),
-                repo: core.getInput('source-repo'),
+                owner,
+                repo,
                 srcPath: core.getInput('source-path'),
                 srcFilename: core.getInput('source-filename'),
                 ref: core.getInput('source-ref'),
