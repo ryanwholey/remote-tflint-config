@@ -1,11 +1,34 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: Fetch remote tflint config
+description: Fetches a remote tflint configuration for local use
+author: Ryan Wholey
 inputs:
-  milliseconds: # change this
+  source-repo: 
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: The repository to copy a tflint configuration from
+  source-owner:
+    required: true
+    description: The repository owner
+  source-path:
+    description: The directory in the remote repo where the configuration exists
+    default: .
+  source-filename:
+    description: The source filename
+    default: .tflint.hcl
+  source-ref:
+    description: Ref or branch of the remote repository to target
+    default: main
+  destination-path:
+    description: Directory to write the config file
+    default: ${{ runner.temp }}
+  destination-filename:
+    description: Name of the configuration file to be written
+    default: .tflint.hcl
+  token:
+    required: false
+    description: Github access token, required for private repositories
+outputs:
+  config-path:
+    description: The tflint configuration file path
 runs:
   using: 'node12'
   main: 'dist/index.js'

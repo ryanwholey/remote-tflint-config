@@ -1,17 +1,23 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import {fetchFileToLocal} from './fetchFileToLocal'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    core.setOutput(
+      'config-path',
+      await fetchFileToLocal({
+        owner: core.getInput('soure-owner'),
+        repo: core.getInput('source-repo'),
+        srcPath: core.getInput('source-path'),
+        srcFilename: core.getInput('source-filename'),
+        ref: core.getInput('source-ref'),
+        dstPath: core.getInput('destination-path'),
+        dstFilename: core.getInput('destination-filename'),
+        token: core.getInput('token')
+      })
+    )
   } catch (error) {
+    console.error(error)
     core.setFailed(error.message)
   }
 }
