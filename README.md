@@ -16,7 +16,10 @@ Fetch a tflint configuration file from a remote repository and save it locally t
         name: Setup TFLint
         with:
           tflint_version: v0.29.0
-      - run: tflint --format compact --config ${{ steps.load-remote-tflint-config.outputs.config-path }}
+      - run: |
+          tflint \
+          --format compact \
+          --config ${{ steps.load-remote-tflint-config.outputs.config-path }}
 ```
 
 ### Action inputs
