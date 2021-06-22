@@ -1,4 +1,4 @@
-name: Fetch remote tflint config
+name: Remote Tflint Config
 description: Fetches a remote tflint configuration for local use
 author: Ryan Wholey
 inputs:
