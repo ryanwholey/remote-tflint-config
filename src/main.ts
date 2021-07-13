@@ -6,7 +6,7 @@ async function run(): Promise<void> {
 
   try {
     core.setOutput(
-      'config-path',
+      'path',
       await fetchFileToLocal({
         owner,
         repo,

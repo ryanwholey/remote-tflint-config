@@ -40,7 +40,7 @@ The following outputs can be used by subsequent workflow steps.
 
 | Name | Description |
 | --- | --- |
-| `config-path` | Path to the configuration file |
+| `path` | Path to the configuration file |
 
 ## Releasing
 
