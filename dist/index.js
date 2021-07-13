@@ -109,7 +109,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const [owner, repo] = core.getInput('source-repo').split('/');
         try {
-            core.setOutput('config-path', yield fetchFileToLocal_1.fetchFileToLocal({
+            core.setOutput('path', yield fetchFileToLocal_1.fetchFileToLocal({
                 owner,
                 repo,
                 srcPath: core.getInput('source-path'),
