@@ -24,7 +24,7 @@ inputs:
     required: false
     description: Github access token, required for private repositories
 outputs:
-  config-path:
+  path:
     description: The tflint configuration file path
 runs:
   using: 'node12'
