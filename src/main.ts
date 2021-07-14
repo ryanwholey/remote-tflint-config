@@ -1,4 +1,6 @@
 import * as core from '@actions/core'
+import * as os from 'os'
+
 import {fetchFileToLocal} from './fetchFileToLocal'
 
 async function run(): Promise<void> {
@@ -13,7 +15,7 @@ async function run(): Promise<void> {
         srcPath: core.getInput('source-path'),
         srcFilename: core.getInput('source-filename'),
         ref: core.getInput('source-ref'),
-        dstPath: core.getInput('destination-path'),
+        dstPath: core.getInput('destination-path') || os.homedir(),
         dstFilename: core.getInput('destination-filename'),
         token: core.getInput('token')
       })
