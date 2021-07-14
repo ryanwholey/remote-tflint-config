@@ -52,6 +52,7 @@ function fetchFileToLocal({ owner, repo, srcPath, srcFilename, ref, dstPath, dst
             path: path.join(srcPath, srcFilename),
             ref
         }));
+        console.log(path.resolve(dstPath, dstFilename));
         const { data } = (yield octokit.rest.repos.getContent({
             owner,
             repo,
