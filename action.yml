@@ -16,7 +16,6 @@ inputs:
     default: main
   destination-path:
     description: Directory to write the config file
-    default: ${{ env.HOME }}
   destination-filename:
     description: Name of the configuration file to be written
     default: .tflint.hcl
