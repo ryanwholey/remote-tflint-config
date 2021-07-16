@@ -42,8 +42,6 @@ export async function fetchFileToLocal({
     })
   )
 
-  console.log(path.resolve(dstPath, dstFilename))
-
   const {data} = (await octokit.rest.repos.getContent({
     owner,
     repo,

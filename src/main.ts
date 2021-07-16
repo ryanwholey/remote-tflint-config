@@ -19,9 +19,11 @@ async function run(): Promise<void> {
         dstFilename: core.getInput('destination-filename'),
         token: core.getInput('token')
       })
+      
     )
   } catch (error) {
     core.setFailed(error.message)
+    throw new Error('foo')
   }
 }
 
