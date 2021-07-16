@@ -6,6 +6,8 @@ import {fetchFileToLocal} from './fetchFileToLocal'
 async function run(): Promise<void> {
   const [owner, repo] = core.getInput('source-repo').split('/')
 
+  throw new Error('foo')
+  
   try {
     core.setOutput(
       'path',
@@ -23,7 +25,7 @@ async function run(): Promise<void> {
     )
   } catch (error) {
     core.setFailed(error.message)
-    throw new Error('foo')
+    
   }
 }
 

@@ -109,6 +109,7 @@ const fetchFileToLocal_1 = __webpack_require__(859);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const [owner, repo] = core.getInput('source-repo').split('/');
+        throw new Error('foo');
         try {
             core.setOutput('path', yield fetchFileToLocal_1.fetchFileToLocal({
                 owner,
@@ -123,7 +124,6 @@ function run() {
         }
         catch (error) {
             core.setFailed(error.message);
-            throw new Error('foo');
         }
     });
 }
