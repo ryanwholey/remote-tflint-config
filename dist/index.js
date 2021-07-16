@@ -1,4 +1,4 @@
-require('./sourcemap-register.js');module.exports =
+module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -52,7 +52,6 @@ function fetchFileToLocal({ owner, repo, srcPath, srcFilename, ref, dstPath, dst
             path: path.join(srcPath, srcFilename),
             ref
         }));
-        console.log(path.resolve(dstPath, dstFilename));
         const { data } = (yield octokit.rest.repos.getContent({
             owner,
             repo,
@@ -124,6 +123,7 @@ function run() {
         }
         catch (error) {
             core.setFailed(error.message);
+            throw new Error('foo');
         }
     });
 }
@@ -5290,4 +5290,3 @@ module.exports = require("zlib");;
 /******/ 	return __webpack_require__(109);
 /******/ })()
 ;
-//# sourceMappingURL=index.js.map
