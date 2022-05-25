@@ -1,3 +1,5 @@
+This project was moved over to [tflinters-](https://github.com/terraform-linters/tflint-load-config-action)
+
 # Remote tflint config
 
 Fetch a tflint configuration file from a remote repository and save it locally to use with `tflint`.
