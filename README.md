@@ -1,4 +1,4 @@
-This project was moved over to [tflinters-](https://github.com/terraform-linters/tflint-load-config-action)
+**Note** This project was moved over to [terraform-linters/tflint-load-config-action](https://github.com/terraform-linters/tflint-load-config-action)
 
 # Remote tflint config
 
